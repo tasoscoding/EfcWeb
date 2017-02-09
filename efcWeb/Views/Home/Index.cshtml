@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Energy Flow Control</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        @Html.ActionLink("Status", "Status", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Start", "Start",null, new { @class="btn btn-default"})
+        @Html.ActionLink("Stop", "Stop", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Reverse", "Reverse", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Get Frequency", "GetFrequency", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Set Frequency", "SetFrequency", null, new { @class = "btn btn-default" })
+    </div>
+</div>
