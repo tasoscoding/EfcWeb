@@ -90,6 +90,7 @@ namespace efcWeb.CoreClasses
             public EngineModel GetInverterModel()
             {
                 short model = ReadRegister(0x00);
+
                 switch (model)
                 {
                     case 7:
