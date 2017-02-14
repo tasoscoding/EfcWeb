@@ -15,9 +15,10 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage Start() {
-            engine.Start();
-            return Request.CreateResponse(System.Net.HttpStatusCode.OK);
+        public IHttpActionResult Action(string command) {
+            if (command == "start")
+                engine.Start();
+            return Ok();
         }
     }
 }

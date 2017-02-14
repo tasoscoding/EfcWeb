@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net.Http;
 
 namespace efcWeb.Controllers
 {
     public class HomeController : Controller
     {
+        HttpClient client;
+        public HomeController()
+        {
+            client = new HttpClient();
+        }
         public ActionResult Index()
         {
             return View();
@@ -27,9 +33,16 @@ namespace efcWeb.Controllers
             return View();
         }
 
-        public ActionResult Start()
+        public async System.Threading.Tasks.Task<ActionResult> Start()
         {
-            return null;
+            var values = new Dictionary<string, string>
+            {
+                {"command", "start" }
+            };
+            var content = new FormUrlEncodedContent(values);
+            var response = await client.PostAsync("http://localhost:64870/api/Operations", content);
+            var responseString = await response.Content.ReadAsStringAsync();
+            return View();
         }
 
         public ActionResult Stop()
