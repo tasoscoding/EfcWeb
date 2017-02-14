@@ -87,7 +87,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\OperationsController.cs" />
-    <Compile Include="CoreClasses\EngineMessageException.cs" />
+    <Compile Include="CoreClasses\Engine.cs" />
     <Compile Include="CoreClasses\Modbus.cs" />
     <Compile Include="CoreClasses\VegaDrive_15P0087B5.cs" />
     <Compile Include="Global.asax.cs">
